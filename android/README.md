@@ -10,7 +10,7 @@ uname -a
 # x86_64 GNU/Linux
 ```
 
-**Installation of Java :**
+**Installation of Java**
 
 ```bash
 # Check if Java is not already installed on your system.
@@ -23,7 +23,7 @@ sudo apt-get install default-jre
 sudo apt-get install default-jdk
 ```
 
-**Installation of nodejs and npm :**
+**Installation of nodejs and npm**
 
 ```bash
 sudo apt-get install nodejs
@@ -36,13 +36,13 @@ sudo apt-get install npm
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 ```
 
-**Installation of Ant :**
+**Installation of Ant**
 
 ```bash
 sudo apt-get install ant
 ```
 
-**Install PhoneGap and depending libraries of PhoneGap :**
+**Install PhoneGap and depending libraries of PhoneGap**
 
 ```bash
 sudo npm install -g phonegap
@@ -53,7 +53,7 @@ sudo npm install -g cordova ionic bower
 #or npm install -g phonegap cordova ionic bower
 ```
 
-**Download [Android SDK](http://dl.google.com/android/android-sdk_r24.3.3-linux.tgz) : **  
+**Download [Android SDK](http://dl.google.com/android/android-sdk_r24.3.3-linux.tgz) **  
 
 ```bash
 # Extract to /usr/local/. Give the executable permission for path/android-sdk-linux/tools/android.
@@ -61,7 +61,7 @@ sudo tar -zxvf ~/Downloads/android-sdk_r24.0.2-linux.tgz -C /usr/local/
 sudo chmod a+x /usr/local/android-sdk-linux/tools/android
 ```
 
-**Add Path : **
+**Add Path**
 
 ```bash
 # Then add the following lines to the end part of the file.
@@ -79,7 +79,7 @@ sudo chown -R $USER:$GROUP ~/.npm
 sudo chown -R $USER:$GROUP ~/.config
 ```
 
-**Test the app locally : ** 
+**Test the app locally** 
 
 ```bash
 git clone `project`
@@ -104,7 +104,7 @@ phonegap serve
 
 
 
-**To-Do:**
+**To-Do**
 
 - [ ] Setup the app's platforms and plugins:
 
@@ -113,3 +113,14 @@ ionic state restore
 ```
 
 - [ ] Run in Android phone instead of emulator.
+
+
+
+
+
+*ref*
+
+[How to install Phonegap in Ubuntu?](http://www.zyxware.com/articles/5160/how-to-install-phonegap-in-ubuntu)
+
+[EACCES: permission denied](https://github.com/bower/bower/issues/2262)
+
