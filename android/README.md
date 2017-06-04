@@ -98,9 +98,9 @@ phonegap serve
 # `Apache Cordova (1.0.0)`
 ```
 
-![](ripple1)
+![](img/ripple1)
 
-![](ripple2)
+![](img/ripple2)
 
 
 

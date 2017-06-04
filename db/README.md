@@ -25,14 +25,14 @@ mysqld --initialize  # mysql_install_db
 systemctl status mysql.service # sudo systemctl mysql start
 ```
 
-![](test)
+![](img/test)
 
 ```bash
 ## For an additional check, you can try connecting to the database using the mysqladmin tool, which is a client that lets you run administrative commands
 mysqladmin -p -u root version  
 ```
 
-![](version)
+![](img/version)
 
 **Log in**
 
