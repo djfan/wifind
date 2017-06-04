@@ -1,3 +1,5 @@
+![](img/linknyc_sample.png)
+
 ```mysql
 select count(*) from wifi_scan where ssid ='linknyc free wi-fi';
 +----------+
@@ -118,6 +120,5 @@ select * from (select lat, lng, max(level) as max_level, min(level) as min_level
 | 40.76474402 | -73.98365786 |       -38 |       -70 |  -55.57142857142857 |     7 |
 | 40.76453052 | -73.98446466 |       -45 |       -63 | -55.666666666666664 |     6 |
 +-------------+--------------+-----------+-----------+---------------------+-------+
-
 ```
 
