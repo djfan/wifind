@@ -85,14 +85,7 @@ class InsertJob(UploadJob):
                 query = "insert into {table_name} (the_geom,{columns}) values".format(table_name=self.table, columns=CARTO_COLUMNS.lower())
                 for record in record_chunk:
                     # query += " (st_transform(st_setsrid(st_makepoint({longitude}, {latitude}), {srid}), 4326),".format(longitude=record[self.x_column], latitude=record[self.y_column], srid=self.srid)
-                    if record['ID'] >= 0:
-                        query += " (st_transform(st_setsrid(st_geomfromtext('{geometry}'),{srid}), 4326),".format(geometry=record['geometry'], srid=self.srid)
-                    else:
-                        try:
-                            query += " (st_transform(st_setsrid(st_geomfromtext('{geometry}'),{srid}), 4326),".format(geometry=record['geometry'], srid=self.srid)
-                        except:
-                            print "error!!!!!"
-
+                    query += " (st_transform(st_setsrid(st_geomfromtext('{geometry}'),{srid}), 4326),".format(geometry=record['geometry'], srid=self.srid) 
                     for column in CARTO_COLUMNS.split(","):
                         try:
                             float(record[column])

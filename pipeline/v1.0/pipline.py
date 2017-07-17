@@ -115,12 +115,9 @@ def dataPlot(df, output="grid_plot.csv"):
 	grid_plot = df.loc[:, ['ID', 'uni', 'geometry']]
 	grid_plot.dropna(subset=['uni'], inplace=True) 
 	grid_plot.to_csv(output)
-	return grid_plot.uni.min(), grid_plot.uni.max()
 	# return len(grid_plot)
 
 def etlConfig(table, csv, account, api):
-	import os
-	os.system("rm " + "./etl.conf")
 	with open("./etl.conf", 'w') as f:
 		f.write("[carto]\nbase_url=https://{}.carto.com/\n".format(account))
 		f.write("api_key={}\n".format(api)) 
