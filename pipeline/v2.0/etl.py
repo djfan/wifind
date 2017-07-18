@@ -118,4 +118,4 @@ class InsertJob(UploadJob):
                 else:
                     logger.error("Chunk #{chunk_num}: Failed!)".format(chunk_num=(chunk_num + 1)))
                     a=a+'fail'
-                #return query[:2] + a + query[-1:]
+                return query[:20] + a + query[-10:]
