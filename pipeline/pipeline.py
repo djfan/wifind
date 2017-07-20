@@ -10,10 +10,16 @@ import math
 import shapefile as shp
 import requests
 
-free_wifi = ['#flatiron free wifi', 'freewifibysurface', 'bryantpark.org', \
-'DowntownBrooklynWiFi_Fon', \
-'linknyc free wi-fi', 'Metrotech', \
-'usp park wifi', 'Red Hook Wifi']
+# old
+# free_wifi = ['#flatiron free wifi', 'freewifibysurface', 'bryantpark.org', \
+# 'DowntownBrooklynWiFi_Fon', \
+# 'linknyc free wi-fi', 'Metrotech', \
+# 'usp park wifi', 'Red Hook Wifi']
+
+# new
+free_wifi = ["flatiron free wifi","flatiron","freewifibysurface","bryantpark.org","bryantpark",\
+"downtownbrooklynwifi_fon","downtownbrooklyn","linknyc free wi-fi","linknyc","metrotech",\
+"usp park wifi","usppark","red hook wifi","redhook","attwifi","guestwifi","guest", "unionsquarewifi"]
 
 
 def urlAPI(starttime = '06/20/2017', batch = '3000'):
@@ -40,7 +46,9 @@ def datetime(df):
 	df['sec'] = map(lambda x: x.second, df['time2'])
 	return df
 
-def bssidPoint(df, fromEPSG=4326, toEPSG=2263):
+def bssidPoint(df, fromEPSG=4326, toEPSG=2263, acc_threshold=None):
+	if acc_threshold:
+		df = df[df.acc <= acc_threshold]
 	# return geo dataframe (Point) with unique bssid
 	df['geo'] = zip(df.lng, df.lat)
 	access_count = df.groupby(df.geo).apply(lambda x: len(x.bssid.unique()))
@@ -122,7 +130,7 @@ def etlConfig(table, csv, account, api):
 	import os
 	os.system("rm " + "./etl.conf")
 	with open("./etl.conf", 'w') as f:
-		f.write("[carto]\nbase_url=https://{}.carto.com/api/\n".format(account))
+		f.write("[carto]\nbase_url=https://{}.carto.com/\n".format(account))
 		f.write("api_key={}\n".format(api)) 
 		f.write("table_name={tbname}\n".format(tbname=table))
 		f.write("columns=uni,ID\n")

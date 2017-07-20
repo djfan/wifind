@@ -13,5 +13,16 @@ free_wifi
 https://nyu.carto.com/u/alanf/builder/f687b68d-f455-43f6-a318-a83ce7e51f1c/embed
 ```
 
-![](https://nyu.carto.com/u/alanf/builder/7868c632-1d59-43c6-913c-3f9497948e43/embed)
+```python
+free_wifi = ["flatiron free wifi","flatiron","freewifibysurface","bryantpark.org","bryantpark",\
+"downtownbrooklynwifi_fon","downtownbrooklyn","linknyc free wi-fi","linknyc","metrotech",\
+"usp park wifi","usppark","red hook wifi","redhook","attwifi","guestwifi","guest", "unionsquarewifi"]
+```
+
+```python
+acc_threshold = 50
+cell_length = 50 (usft)
+```
+
+
 

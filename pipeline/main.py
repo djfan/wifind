@@ -5,20 +5,21 @@ import etl
 import requests
 import time
 
+rm(['*.pyc', 'polygon_grid.*', 'unique_bssid.p', 'grid_plot.csv', 'grid_plot_free.csv', 'grid_plot_free_same_color_range.csv'])
 
 # API 1
 # data = urlAPI(starttime = '06/20/2017', batch = '3000')
 # df = pd.read_json(data)
 
 # API 2
-# url = '?' 
-# df = pd.read_json(requests.get(url).text)
+#url = 'http://wifindproject.com/wifipulling/?columns=lat%7Clng%7Cssid%7Cbssid%7Cacc%7Ctime%7Clevel&startdate=07/10/2017&enddate=07/11/2017&device_model=ASUS_T00P&timeformat=1' 
+#df = pd.read_json(requests.get(url).text)
 
 # DataFrame: Extracted from Datebase
 df = pd.read_csv('~/Desktop/motoG4_0629.csv') # motoG4_062212.csv
 
 print 1
-df2 = bssidPoint(df)
+df2 = bssidPoint(df, acc_threshold=50) # <=
 print 12
 grid(50, df2, 'polygon_grid.shp')
 print 13
@@ -65,9 +66,8 @@ updateCarto('allwifi', "grid_plot.csv")
 time.sleep(60)
 print 16
 
-#rm(['polygon_grid.*', 'unique_bssid.p', 'grid_plot.csv', 'grid_plot_free.csv', 'grid_plot_free_same_color_range.csv'])
 
-
+rm(['*.pyc'])
 
 
 
